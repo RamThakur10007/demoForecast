@@ -82,13 +82,6 @@ def get_forecast():
     # 9. Return as JSON
     return JSONResponse(content=forecast_df.to_dict(orient="records"))
  
-# Add a main function for running locally
-def main():
-    # Use uvicorn to run the app when this script is executed
-    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
- 
-# Check if the script is run directly and not imported
-if __name__ == "__main__":
-    main()
+
  
  

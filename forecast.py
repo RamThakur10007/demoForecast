@@ -85,7 +85,7 @@ def get_forecast():
 # Add a main function for running locally
 def main():
     # Use uvicorn to run the app when this script is executed
-    uvicorn.run(app, host="localhost", port=1000, reload=True)
+    uvicorn.run(app, host="localhost", port=8000, reload=True)
  
 # Check if the script is run directly and not imported
 if __name__ == "__main__":

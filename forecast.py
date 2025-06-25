@@ -5,7 +5,8 @@ from sklearn.linear_model import LinearRegression
 from datetime import datetime, timedelta
 import uvicorn
 from fastapi.middleware.cors import CORSMiddleware
- 
+import os
+
 app = FastAPI()
  
  
@@ -83,5 +84,9 @@ def get_forecast():
     return JSONResponse(content=forecast_df.to_dict(orient="records"))
  
 
- 
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Render provides PORT env variable
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+
  
